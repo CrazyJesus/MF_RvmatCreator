@@ -38,6 +38,8 @@
             rvmatCheckListBox = new CheckedListBox();
             DeleteRvmatBTN = new Button();
             AddRvmatBTN = new Button();
+            InstructionBTN = new Button();
+            ResetRvmatsBTN = new Button();
             SuspendLayout();
             // 
             // label1
@@ -59,7 +61,7 @@
             // 
             // SelectRvmatBTN
             // 
-            SelectRvmatBTN.Location = new Point(359, 25);
+            SelectRvmatBTN.Location = new Point(146, 54);
             SelectRvmatBTN.Name = "SelectRvmatBTN";
             SelectRvmatBTN.Size = new Size(104, 23);
             SelectRvmatBTN.TabIndex = 3;
@@ -78,15 +80,16 @@
             // 
             // RvmatTypeTextBox
             // 
-            RvmatTypeTextBox.Location = new Point(146, 77);
+            RvmatTypeTextBox.Location = new Point(146, 101);
             RvmatTypeTextBox.Name = "RvmatTypeTextBox";
             RvmatTypeTextBox.Size = new Size(149, 23);
             RvmatTypeTextBox.TabIndex = 6;
+            RvmatTypeTextBox.TextChanged += RvmatTypeTextBox_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(146, 59);
+            label3.Location = new Point(146, 83);
             label3.Name = "label3";
             label3.Size = new Size(116, 15);
             label3.TabIndex = 7;
@@ -94,14 +97,13 @@
             // 
             // rvmatCheckListBox
             // 
+            rvmatCheckListBox.CheckOnClick = true;
             rvmatCheckListBox.FormattingEnabled = true;
             rvmatCheckListBox.Location = new Point(14, 25);
             rvmatCheckListBox.Name = "rvmatCheckListBox";
             rvmatCheckListBox.Size = new Size(126, 184);
             rvmatCheckListBox.TabIndex = 8;
-            rvmatCheckListBox.ItemCheck += rvmatCheckListBox_ItemCheck;
             rvmatCheckListBox.Click += rvmatCheckListBox_Click;
-            rvmatCheckListBox.SelectedIndexChanged += rvmatCheckListBox_SelectedIndexChanged;
             // 
             // DeleteRvmatBTN
             // 
@@ -111,6 +113,7 @@
             DeleteRvmatBTN.TabIndex = 9;
             DeleteRvmatBTN.Text = "Delete";
             DeleteRvmatBTN.UseVisualStyleBackColor = true;
+            DeleteRvmatBTN.Click += DeleteRvmatBTN_Click;
             // 
             // AddRvmatBTN
             // 
@@ -120,12 +123,35 @@
             AddRvmatBTN.TabIndex = 10;
             AddRvmatBTN.Text = "Add rvmat";
             AddRvmatBTN.UseVisualStyleBackColor = true;
+            AddRvmatBTN.Click += AddRvmatBTN_Click;
+            // 
+            // InstructionBTN
+            // 
+            InstructionBTN.Location = new Point(230, 216);
+            InstructionBTN.Name = "InstructionBTN";
+            InstructionBTN.Size = new Size(75, 23);
+            InstructionBTN.TabIndex = 11;
+            InstructionBTN.Text = "Instruction";
+            InstructionBTN.UseVisualStyleBackColor = true;
+            InstructionBTN.Click += InstructionBTN_Click;
+            // 
+            // ResetRvmatsBTN
+            // 
+            ResetRvmatsBTN.Location = new Point(230, 187);
+            ResetRvmatsBTN.Name = "ResetRvmatsBTN";
+            ResetRvmatsBTN.Size = new Size(75, 23);
+            ResetRvmatsBTN.TabIndex = 12;
+            ResetRvmatsBTN.Text = "Reset rvmats";
+            ResetRvmatsBTN.UseVisualStyleBackColor = true;
+            ResetRvmatsBTN.Click += ResetRvmatsBTN_Click;
             // 
             // RvmatManagerForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(475, 251);
+            ClientSize = new Size(317, 251);
+            Controls.Add(ResetRvmatsBTN);
+            Controls.Add(InstructionBTN);
             Controls.Add(AddRvmatBTN);
             Controls.Add(DeleteRvmatBTN);
             Controls.Add(rvmatCheckListBox);
@@ -154,5 +180,7 @@
         private CheckedListBox rvmatCheckListBox;
         private Button DeleteRvmatBTN;
         private Button AddRvmatBTN;
+        private Button InstructionBTN;
+        private Button ResetRvmatsBTN;
     }
 }
