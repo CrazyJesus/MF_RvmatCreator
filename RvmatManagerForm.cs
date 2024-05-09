@@ -134,7 +134,6 @@ namespace MF_RvmatCreator
         private void AddRvmatBTN_Click(object sender, EventArgs e)
         {
             string path = SelectRvmatTextBox.Text;
-            Debug.WriteLine(path);
             if (File.Exists(path))
             {
                 RvmatManager.AddRvmat(RvmatTypeTextBox.Text, path);

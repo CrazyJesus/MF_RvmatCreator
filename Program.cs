@@ -140,7 +140,7 @@ namespace MF_RvmatCreator
         //Getters
         public static string GetVersion()
         {
-            return "0.1.5";
+            return "0.1.6";
         }
 
         static RvmatConfig GetConfig()
@@ -175,7 +175,7 @@ namespace MF_RvmatCreator
         public static string GetRVMAT(string type)
         {
             string RVMAT = String.Empty;
-            if(m_RvmatJson != null)
+            if(m_RvmatJson != null && m_RvmatJson.m_RVMAT.ContainsKey(type))
             {
                 RVMAT = m_RvmatJson.m_RVMAT[type];
             }
@@ -334,8 +334,8 @@ namespace MF_RvmatCreator
          public static void AddRvmat(string type, string path)
         {
             string content;
-            if (GetRVMAT(type) == null)
-            {
+            if (GetRVMAT(type) == String.Empty)
+            { 
                 using (FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.Read))
                 {
                     byte[] dataRead = new byte[fileStream.Length];
